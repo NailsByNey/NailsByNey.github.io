@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- EDIT: page title + description (shows in Google and link previews) -->
+<title>Nails by Ney | Private Nail Studio in Franklin, TN</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="description" content="Private nail artistry by Ney at Karpos & Co in Franklin, Tennessee. Book your appointment online.">
+<script>document.documentElement.className='js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<style>
+:root{--c1:#ececec;--c2:#d6cec7;--c3:#c0af9f;--c4:#aa8f7a;--accent:#9eb2bd;--ink:#2e2520;--ease:cubic-bezier(.22,.8,.24,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Times New Roman",Times,serif;background:var(--c1);color:var(--ink);font-size:18px;line-height:1.7;overflow-x:hidden}
+body.lock{overflow:hidden}
+a,button{font-family:inherit;color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+section{position:relative;padding:96px 24px;overflow:hidden}
+.wrap{max-width:960px;margin:0 auto;position:relative;z-index:2}
+h1,h2,h3{font-weight:400;line-height:1.08}
+h2{font-size:clamp(2.5rem,10vw,4.2rem);font-style:italic;margin-bottom:30px}
+h2::after{content:"";display:block;height:2px;width:0;background:var(--accent);margin-top:14px;transition:width 1.1s var(--ease) .3s}
+.in h2::after,h2.in::after{width:72px}
+h3{font-size:1.5rem;font-style:italic;margin-bottom:8px}
+p+p{margin-top:1em}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px 90px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.dot{position:absolute;z-index:1;border-radius:50%;background:var(--accent)}
+.d1{width:11px;height:11px;left:12%;top:18%}.d2{width:7px;height:7px;right:14%;bottom:26%}.d3{width:9px;height:9px;left:70%;top:12%}
+.s1{top:20%;right:10%}.s2{bottom:24%;left:8%}
+.logo{display:block;width:min(94vw,640px);height:auto;margin:0 auto;overflow:visible}
+.logo .scal,.logo .ring1{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s var(--ease) .1s forwards}
+.logo .ring1{animation-delay:.7s;animation-duration:2.2s}
+.logo .ring2{opacity:0;animation:fade 1.4s ease 1.6s forwards}
+.logo .leaf{transform:scale(0);animation:pop .7s var(--ease) forwards;animation-delay:calc(1s + var(--i)*28ms)}
+.logo .nails{opacity:0;transform:translateY(40px);animation:lin 1.3s var(--ease) 1s forwards}
+.hero .tag{margin-top:26px;font-size:1.2rem;opacity:0;animation:fade 1.2s ease 2.4s forwards}
+.hero .btn{margin-top:18px;opacity:0;animation:fade 1.2s ease 2.6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes pop{to{transform:scale(1)}}
+@keyframes lin{to{opacity:1;transform:none}}
+.cue{position:absolute;bottom:26px;left:calc(50% - .5px);z-index:2}
+.cue span{display:block;width:1px;height:56px;background:var(--c4);transform-origin:top;animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(prefers-reduced-motion:reduce){
+ .logo .scal,.logo .ring1{stroke-dashoffset:0!important}
+ .logo .ring2,.logo .nails,.hero .tag,.hero .btn{opacity:1!important;transform:none!important}
+ .logo .leaf{transform:none!important}
+}
+
+/* photos */
+.photo{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--c2),var(--c3))}
+.photo>img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;z-index:1}
+.photo>img[src=""],.photo>img.broken{display:none}
+.photo figcaption{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:14px;font-style:italic;font-size:1rem;opacity:.7}
+.photo>img,.photo figcaption{transform:translateY(var(--py,0%))}
+.photo.has figcaption{display:none}
+
+/* reveals */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .sl{transform:translateX(-60px)}.js .sr{transform:translateX(60px)}
+.js .mask::after{content:"";position:absolute;inset:-1px;background:var(--c1);z-index:5;transform-origin:top;transition:transform 1.4s var(--ease);transition-delay:inherit}
+.js .mask.in::after{transform:scaleY(0)}
+
+/* about */
+#about{background:var(--c1)}
+.about-grid{display:grid;gap:44px}
+.pics{position:relative;padding-bottom:64px}
+.pic1{width:76%;aspect-ratio:3/4;border-radius:999px 999px 20px 20px}
+.pic2{position:absolute;right:0;bottom:0;width:46%;aspect-ratio:1;border-radius:50%;border:6px solid var(--c1)}
+.pics .dot{z-index:3}
+.star{position:absolute;width:22px;height:22px;color:var(--accent);z-index:3}
+
+/* book */
+#book{background:var(--c2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.two>div{padding:0 0 0 14px;border-left:2px solid var(--accent)}
+.two>div+div{padding-left:14px}
+.addr{font-style:normal;font-size:1.05rem;line-height:1.55}
+.btn{display:inline-block;margin-top:12px;background:var(--c4);color:var(--ink);text-decoration:none;font-size:1.15rem;padding:14px 22px;border-radius:999px;border:1px solid var(--ink);transition:background .3s,transform .3s var(--ease);text-align:center}
+.btn:hover{background:var(--c3);transform:translateY(-2px)}
+.map{display:block;margin-top:44px;border-radius:20px;overflow:hidden;border:1px solid var(--c3);text-decoration:none;background:var(--c1)}
+.map svg{display:block;width:100%;height:auto}
+.map b{display:block;font-weight:400;font-style:italic;text-align:center;padding:12px;border-top:1px solid var(--c3)}
+.pulse{transform-origin:200px 108px;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.4);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+
+/* work */
+#work{background:var(--c1)}
+.grid{columns:2;column-gap:12px}
+.tile{break-inside:avoid;margin-bottom:12px;border-radius:14px}
+.t1{aspect-ratio:4/5}.t2{aspect-ratio:1}.t3{aspect-ratio:3/4}
+.social{display:flex;gap:14px;margin-top:36px;align-items:center}
+.ico{width:54px;height:54px;border-radius:50%;border:1px solid var(--c4);display:grid;place-items:center;transition:background .3s,transform .3s var(--ease)}
+.ico:hover{background:var(--c2);transform:translateY(-3px)}
+.ico svg{width:24px;height:24px}
+
+/* shop */
+#shop{background:var(--c2)}
+.cards{display:grid;gap:20px}
+.card{background:var(--c1);padding:30px 26px;border:1px solid var(--c3);position:relative}
+.card:nth-child(1){border-radius:26px 26px 26px 4px}.card:nth-child(2){border-radius:26px 26px 4px 26px}
+.card a.go{display:inline-block;margin-top:16px;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px}
+.note{font-size:.9rem;opacity:.75;margin-top:22px}
+
+/* space + policies */
+#space{background:var(--c2)}
+.space-wide{aspect-ratio:4/3;border-radius:20px;margin-bottom:12px}
+#space .mask::after{background:var(--c2)}
+#policies{background:var(--c1)}
+.pol details{border-bottom:1px solid var(--c3)}
+.pol details:first-of-type{border-top:1px solid var(--c3)}
+.pol summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.5rem;font-style:italic;padding:20px 0}
+.pol summary::-webkit-details-marker{display:none}
+.pol summary::after{content:"+";font-style:normal;font-size:1.8rem;color:var(--c4);transition:transform .4s var(--ease)}
+.pol details[open] summary::after{transform:rotate(45deg);color:var(--accent)}
+.pol .body{padding:0 0 24px;max-width:60ch}
+.pol .fee{display:inline-block;margin-top:10px;padding:6px 16px;border:1px solid var(--accent);border-radius:999px}
+
+/* footer */
+footer{background:var(--c3);padding:70px 24px 50px;text-align:center}
+footer .social{justify-content:center}
+footer a.mail{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px}
+.pp{display:inline-block;margin-top:32px;text-decoration:none;border-bottom:1px solid var(--ink)}
+.copy{font-size:.9rem;margin-top:18px;opacity:.8}
+
+/* privacy page */
+#privacy{background:var(--c1);min-height:100vh;padding:110px 24px 60px}
+#privacy h1{font-size:clamp(2.4rem,10vw,3.6rem);font-style:italic}
+#privacy .wrap{max-width:680px}
+#privacy h3{margin:38px 0 10px}
+.upd{margin:10px 0 28px;opacity:.75}
+.back{display:inline-block;margin-top:40px;text-decoration:none;border-bottom:1px solid var(--ink)}
+[hidden]{display:none!important}
+
+@media(min-width:760px){
+ body{font-size:20px}
+ section{padding:130px 40px}
+ .about-grid{grid-template-columns:1fr 1fr;align-items:center}
+ .grid{columns:3;column-gap:16px}.tile{margin-bottom:16px}
+ .cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:360px){.two{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}*{animation:none!important;transition:none!important}
+ .rv,.mask{opacity:1!important;transform:none!important;clip-path:none!important}
+ .brand .l,.tag{opacity:1!important;transform:none!important}
+}
+
+/* progress + top bar */
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:80}
+#top{position:fixed;top:0;left:0;right:0;z-index:70;display:flex;align-items:center;justify-content:center;gap:28px;padding:calc(10px + env(safe-area-inset-top)) 10px 10px;background:rgba(236,236,236,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--c2)}
+.wm{display:none;font-style:italic;font-size:1.45rem;text-decoration:none}
+#tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;max-width:100%}
+#tabs::-webkit-scrollbar{display:none}
+#tabs a{position:relative;white-space:nowrap;text-decoration:none;font-style:italic;font-size:1rem;padding:6px 10px;border-radius:999px;transition:background .3s}
+#tabs a:hover{background:var(--c2)}
+#tabs a.active{background:var(--c2)}
+#tabs a.active::after{content:"";position:absolute;left:50%;bottom:-3px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--accent)}
+
+/* pages */
+body{display:flex;flex-direction:column;min-height:100svh}
+#site{flex:1}
+.page.enter{animation:pg .7s ease}
+@keyframes pg{from{opacity:0}}
+.page:not([data-page=home])>section:first-child{padding-top:128px}
+.lead{margin-bottom:28px}
+.more{display:inline-block;margin-top:18px;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px}
+.teaser{display:grid;gap:30px;align-items:center}
+.teaser .photo{width:62%;aspect-ratio:1;border-radius:50%;margin:0 auto;border:6px solid var(--c1)}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.strip .photo{aspect-ratio:3/4;border-radius:14px}
+.bg2{background:var(--c2)}
+.bg2 .mask::after{background:var(--c2)}
+.seg{display:inline-flex;border:1px solid var(--c3);border-radius:999px;padding:4px;margin-bottom:34px;background:var(--c2)}
+.seg button{border:0;background:none;cursor:pointer;font-size:1.1rem;font-style:italic;padding:9px 22px;border-radius:999px;transition:background .3s}
+.seg button.on{background:var(--c1)}
+.pane{animation:pg .6s ease}
+.pol .fee{margin-right:8px}
+.hero{padding-top:90px}
+
+/* floating social icons */
+#float{position:fixed;left:max(14px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));z-index:60;display:flex;flex-direction:column;gap:10px}
+.fab{width:46px;height:46px;border-radius:50%;border:1px solid var(--c4);background:rgba(236,236,236,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:grid;place-items:center;transition:background .3s,transform .3s var(--ease)}
+.fab:hover{background:var(--c2);transform:translateY(-3px)}
+.fab svg{width:22px;height:22px}
+@media(min-width:760px){
+ .wm{display:block}#tabs a{font-size:1.15rem;padding:7px 16px}
+ .teaser{grid-template-columns:1fr 1.3fr;gap:60px}.teaser .photo{width:80%}
+ .page:not([data-page=home])>section:first-child{padding-top:150px}
+}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}.duo .photo{aspect-ratio:4/5;border-radius:14px}
+</style></head>
+<body>
+
+<!-- Icons used throughout (don't edit) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+ <symbol id="tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.5 3c.3 2.4 1.8 4 4 4.2v3a7 7 0 0 1-4-1.3v6.2a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.1a2.6 2.6 0 1 0 1.7 2.4V3h3z"/></symbol>
+ <symbol id="st" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.7 6.5 5.5 11.3 12 12-6.5.7-11.3 5.5-12 12-.7-6.5-5.5-11.3-12-12C6.5 11.3 11.3 6.5 12 0z"/></symbol>
+</svg>
+
+<div id="bar"></div>
+
+<!-- TOP BAR: edit labels here. data-page must match a page below. -->
+<header id="top">
+ <a class="wm" href="#home">Nails by Ney</a>
+ <nav id="tabs" aria-label="Pages">
+  <a href="#home" data-page="home">Home</a>
+  <a href="#about" data-page="about">About</a>
+  <a href="#gallery" data-page="gallery">Gallery</a>
+  <a href="#policies" data-page="policies">Policies</a>
+  <a href="#shop" data-page="shop">Shop</a>
+ </nav>
+</header>
+
+<!-- Floating social icons (bottom-left on every page) -->
+<div id="float">
+ <a class="fab" data-link="instagram" aria-label="Instagram"><svg><use href="#ig"/></svg></a>
+ <a class="fab" data-link="tiktok" aria-label="TikTok"><svg><use href="#tt"/></svg></a>
+</div>
+
+<main id="site">
+
+<!-- ================= PAGE: HOME ================= -->
+<div class="page" data-page="home">
+<section id="home" class="hero">
+   <i class="dot d1" data-speed=".3"></i><i class="dot d2" data-speed="-.2"></i><i class="dot d3" data-speed=".15"></i>
+   <svg class="star s1" data-speed=".18"><use href="#st"/></svg>
+   <svg class="star s2" data-speed="-.14"><use href="#st"/></svg>
+   <div class="wrap">
+<h1 class="vh">Nails by Ney</h1>
+
+    <!-- LOGO (drawn in code). To use your exact logo file instead, delete this whole <svg>...</svg>
+         and the <script> below it, and paste: <img class="logo" src="YOUR_LOGO.png" alt="Nails by Ney"> -->
+    <svg class="logo" viewBox="0 0 1000 760" role="img" aria-label="Nails by Ney logo">
+     <defs>
+      <filter id="rough" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter>
+      <clipPath id="wipe"><rect id="wr" x="0" y="150" width="0" height="460"><animate attributeName="width" from="0" to="1000" dur="1.8s" begin="1.8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".22 .8 .24 1"/></rect></clipPath>
+     </defs>
+     <g filter="url(#rough)" fill="none" stroke="#2b2b2b" stroke-linecap="round" stroke-linejoin="round">
+      <path class="scal" pathLength="1" stroke-width="2.4"/>
+      <ellipse class="ring1" pathLength="1" cx="500" cy="380" rx="400" ry="292" stroke-width="3.2"/>
+      <ellipse class="ring2" cx="500" cy="380" rx="388" ry="281" stroke-width="1.6" stroke-dasharray="6 5"/>
+      <g id="leaves" fill="#2b2b2b" stroke="none"></g>
+     </g>
+     <!-- EDIT: "NAILS" color is your brand tan (#c0af9f) -->
+     <text class="nails" x="522" y="497" text-anchor="middle" fill="#c0af9f" font-size="340" textLength="602" lengthAdjust="spacingAndGlyphs" style="font-family:Anton,Impact,'Arial Narrow',sans-serif">NAILS</text>
+    <image href="by-ney.png" x="336" y="303" width="364" height="174" clip-path="url(#wipe)"/>
+    </svg>
+    <script>
+    (function(){
+     const cx=500,cy=380,N=46,ns='http://www.w3.org/2000/svg';
+     const P=(rx,ry,t)=>[cx+rx*Math.cos(t),cy+ry*Math.sin(t)];
+     const chord=2*Math.PI*Math.sqrt((470*470+345*345)/2)/N,r=(chord*.56).toFixed(1);
+     let d='';
+     for(let i=0;i<=N;i++){const p=P(470,345,i*2*Math.PI/N);d+=(i?'A'+r+' '+r+' 0 0 1 ':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)+' '}
+     document.querySelector('.logo .scal').setAttribute('d',d+'Z');
+     const g=document.getElementById('leaves');
+     for(let i=0;i<N;i++){
+      const t=(i+.5)*2*Math.PI/N,p=P(436,318,t),a=Math.atan2((p[1]-cy)/(292*292),(p[0]-cx)/(400*400))*180/Math.PI;
+      const o=document.createElementNS(ns,'g');
+      o.setAttribute('transform','translate('+p[0].toFixed(1)+' '+p[1].toFixed(1)+') rotate('+(a+90).toFixed(1)+')');
+      o.innerHTML='<g class="leaf" style="--i:'+i+'"><g transform="scale(1.5)"><path d="M0 0C-5-5-5-13 0-17C5-13 5-5 0 0Z"/><path transform="rotate(-38) scale(.85)" d="M0 0C-5-5-5-13 0-17C5-13 5-5 0 0Z"/><path transform="rotate(38) scale(.85)" d="M0 0C-5-5-5-13 0-17C5-13 5-5 0 0Z"/></g></g>';
+      g.appendChild(o);
+     }
+     if(matchMedia('(prefers-reduced-motion:reduce)').matches)document.getElementById('wr').setAttribute('width','1000');
+    })();
+    </script>
+
+    <!-- EDIT: tagline -->
+    <p class="tag">Private nail studio in Franklin, Tennessee</p>
+    <a class="btn" data-link="booking">Book now</a>
+   </div>
+   <div class="cue"><span></span></div>
+  </section>
+
+<section id="book">
+ <svg class="star" style="top:60px;right:28px"><use href="#st"/></svg>
+ <div class="wrap">
+  <h2 class="rv">Book your visit</h2>
+  <div class="two">
+   <div class="rv sl">
+    <h3>Address</h3>
+    <!-- EDIT: salon address -->
+    <address class="addr">Karpos &amp; Co Salon<br>320 Liberty Pike Unit 130<br>Franklin, TN 37064</address>
+   </div>
+   <div class="rv sr">
+    <h3>Book</h3>
+    <p style="font-size:1.05rem;line-height:1.5">Pick a time that works for you.</p>
+    <!-- Booking link is set in the CONFIG block at the bottom of this file -->
+    <a class="btn" data-link="booking">Book now</a>
+   </div>
+  </div>
+
+  <!-- Stylized map. Tapping opens Google Maps (set the search link in CONFIG at the bottom). -->
+  <a class="map rv" data-link="maps" aria-label="Open Karpos &amp; Co location in Google Maps">
+   <svg viewBox="0 0 400 220" role="img" aria-hidden="true">
+    <rect width="400" height="220" fill="#ececec"/>
+    <path d="M-10 170 C70 130 120 190 210 150 S350 90 410 120 L410 150 C350 120 260 190 210 180 S70 160 -10 200Z" fill="#9eb2bd" opacity=".35"/>
+    <g fill="#d6cec7"><rect x="20" y="20" width="90" height="50" rx="6"/><rect x="130" y="20" width="60" height="50" rx="6"/><rect x="250" y="20" width="120" height="50" rx="6"/><rect x="230" y="125" width="60" height="30" rx="6" opacity="0"/></g>
+    <g stroke="#c0af9f" stroke-width="9" stroke-linecap="round" fill="none"><path d="M-10 92 H410"/><path d="M118 -10 V230"/><path d="M200 -10 V230" stroke="#aa8f7a" stroke-width="12"/><path d="M310 -10 V100 L410 160"/></g>
+    <circle class="pulse" cx="200" cy="108" r="14" fill="#9eb2bd"/>
+    <path d="M200 124 C192 112 186 106 186 98 a14 14 0 0 1 28 0 c0 8 -6 14 -14 26z" fill="#aa8f7a" stroke="#2e2520" stroke-width="1.5"/>
+    <circle cx="200" cy="98" r="5" fill="#ececec"/>
+    <text x="212" y="130" font-family="Times New Roman,serif" font-style="italic" font-size="15" fill="#2e2520">Karpos &amp; Co</text>
+   </svg>
+   <b>Tap for directions in Google Maps</b>
+  </a>
+ </div>
+</section>
+
+<!-- Short About teaser -->
+<section id="meet">
+ <div class="wrap teaser">
+  <figure class="photo mask"><img src="IMG_1153.JPG" alt="Ney, nail technician"><figcaption>Photo</figcaption></figure>
+  <div>
+   <h2 class="rv">Who is Ney?</h2>
+   <p class="rv">Hi! I’m Renee, a private nail tech based in Franklin, Tennessee, specializing in gel services and natural nail care. Healthy nails always come first for me.</p>
+   <a class="more rv" href="#about">More about Ney</a>
+  </div>
+ </div>
+</section>
+
+<!-- Recent work preview -->
+<section id="recent" class="bg2">
+ <div class="wrap">
+  <h2 class="rv">Recent sets</h2>
+  <div class="strip">
+   <figure class="photo mask"><img src="Work1.jpg" alt="Recent nail set 1"><figcaption>Work 1</figcaption></figure>
+   <figure class="photo mask"><img src="Work2.jpg" alt="Recent nail set 2"><figcaption>Work 2</figcaption></figure>
+   <figure class="photo mask"><img src="Work3.jpg" alt="Recent nail set 3"><figcaption>Work 3</figcaption></figure>
+  </div>
+  <a class="more rv" href="#gallery">See the full gallery</a>
+ </div>
+</section>
+</div>
+
+<!-- ================= PAGE: ABOUT ================= -->
+<div class="page" data-page="about" hidden>
+<section id="about">
+ <div class="wrap about-grid">
+  <div class="pics">
+   <figure class="photo pic1 mask"><img src="IMG_1145.JPG" alt="Ney, nail technician"><figcaption>Stylist photo 1<br>add image in src</figcaption></figure>
+   <figure class="photo pic2 mask"><img src="IMG_1153.JPG" alt="Ney at work"><figcaption>Stylist photo 2</figcaption></figure>
+   <svg class="star" style="top:6%;right:8%"><use href="#st"/></svg>
+   <i class="dot" style="width:9px;height:9px;left:-4px;bottom:30%"></i>
+  </div>
+  <div>
+   <h2 class="rv">Who is Ney?</h2>
+   <!-- EDIT: bio -->
+   <p class="rv">Hi! I’m Renee, a private nail tech based in Franklin, Tennessee, specializing in gel services and natural nail care.</p>
+   <p class="rv">Healthy nails always come first for me. I love helping my clients grow out and maintain their natural nails through soft gel and hard gel services, while always making sure we’re doing what’s best for your nail health. I also offer Gel-X and love creating fun nail art. I’ll never turn down a crazy design or a good challenge!</p>
+   <p class="rv">A little about me: I was born and raised in Oregon, love the ocean, and spent a year living in Hawaii. When I’m not doing nails, I love trying new restaurants and spending time with my family and fiancé.</p>
+   <p class="rv">I’m so happy you’re here and can’t wait to have you in my chair! ♡</p>
+   <a class="btn rv" data-link="booking">Book with Ney</a>
+  </div>
+ </div>
+</section>
+</div>
+
+<!-- ================= PAGE: GALLERY ================= -->
+<div class="page" data-page="gallery" hidden>
+<section id="gallery">
+ <svg class="star" style="top:110px;right:26px"><use href="#st"/></svg>
+ <div class="wrap">
+  <h2 class="rv">Gallery</h2>
+  <div class="seg rv" role="tablist">
+   <button role="tab" data-pane="work" class="on" aria-selected="true">The Work</button>
+   <button role="tab" data-pane="space" aria-selected="false">The Space</button>
+  </div>
+  <!-- EDIT: THE WORK photos. Copy/delete a <figure> line to add/remove. -->
+  <div class="pane" id="pane-work">
+   <div class="grid">
+   <figure class="photo tile t1 mask"><img src="Work1.jpg" alt="Nail set 1"><figcaption>Salon photo 1</figcaption></figure>
+   <figure class="photo tile t2 mask"><img src="Work2.jpg" alt="Nail set 2"><figcaption>Salon photo 2</figcaption></figure>
+   <figure class="photo tile t3 mask"><img src="Work3.jpg" alt="Nail set 3"><figcaption>Salon photo 3</figcaption></figure>
+   <figure class="photo tile t1 mask"><img src="Work4.jpg" alt="Nail set 4"><figcaption>Salon photo 4</figcaption></figure>
+   <figure class="photo tile t3 mask"><img src="Work5.jpg" alt="Nail set 5"><figcaption>Salon photo 5</figcaption></figure>
+   <figure class="photo tile t2 mask"><img src="Work6.jpg" alt="Nail set 6"><figcaption>Salon photo 6</figcaption></figure>
+   <figure class="photo tile t1 mask"><img src="Work7.jpg" alt="Nail set 7"><figcaption>Salon photo 7</figcaption></figure>
+   <figure class="photo tile t3 mask"><img src="Work8.jpg" alt="Nail set 8"><figcaption>Salon photo 8</figcaption></figure>
+   <figure class="photo tile t2 mask"><img src="Work9.jpg" alt="Nail set 9"><figcaption>Salon photo 9</figcaption></figure>
+   <figure class="photo tile t1 mask"><img src="Work10.jpg" alt="Nail set 10"><figcaption>Salon photo 10</figcaption></figure>
+  </div>
+  </div>
+  <!-- EDIT: THE SPACE photos -->
+  <div class="pane" id="pane-space" hidden>
+   <!-- EDIT: the one wide photo -->
+   <figure class="photo space-wide mask"><img src="The Space1.JPG" alt="Inside the salon"><figcaption>Wide photo of the space</figcaption></figure>
+   <!-- EDIT: detail photos 1 and 2 -->
+   <div class="duo">
+    <figure class="photo mask"><img src="The Space2.jpg" alt="Salon detail 1"><figcaption>Detail 1</figcaption></figure>
+    <figure class="photo mask"><img src="The Space3.JPG" alt="Salon detail 2"><figcaption>Detail 2</figcaption></figure>
+   </div>
+   <!-- EDIT: detail photos 3, 4 and 5 -->
+   <div class="strip">
+    <figure class="photo mask"><img src="The Space4.JPG" alt="Salon detail 3"><figcaption>Detail 3</figcaption></figure>
+    <figure class="photo mask"><img src="The Space6.JPG" alt="Salon detail 4"><figcaption>Detail 4</figcaption></figure>
+    <figure class="photo mask"><img src="The Space5.JPG" alt="Salon detail 5"><figcaption>Detail 5</figcaption></figure>
+   </div>
+  </div>
+  </div>
+ </div>
+</section>
+</div>
+
+<!-- ================= PAGE: POLICIES ================= -->
+<div class="page" data-page="policies" hidden>
+  <section id="policies">
+   <div class="wrap">
+    <h2 class="rv">Policies</h2>
+    <p class="lead rv">I can't wait to have you in my chair! These are a few little things that help every appointment run smoothly and keep my space relaxing for everyone. Tap a heading to open it.</p>
+    <div class="pol rv">
+     <!-- EDIT: each policy is one <details> block. Copy a whole block to add one, delete one to remove it. -->
+     <details open>
+      <summary>Cancellations</summary>
+      <div class="body">
+       <p>I know life happens, and I'm always happy to help you reschedule when I can. Because I set aside this time just for you, cancellations made within 48 hours of your appointment will incur a fee of 50% of your reserved services. Same-day cancellations are charged 100% of your reserved services.</p>
+       <span class="fee">Within 48 hours: 50%</span><span class="fee">Same day: 100%</span>
+      </div>
+     </details>
+     <details>
+      <summary>Running late</summary>
+      <div class="body">
+       <p>Please give yourself plenty of time for travel and traffic so you can arrive relaxed. If you're running behind, just message me right away and we'll see if I can still take care of you.</p>
+       <p>If you arrive 15 minutes or more late, I may need to reschedule your appointment or shorten your service so I don't run into my next client's time.</p>
+      </div>
+     </details>
+     <details>
+      <summary>No-shows</summary>
+      <div class="body">
+       <p>If an appointment is missed without notice, the full cost of the service you were scheduled for will be charged, since that time can't be offered to someone else. A quick message lets me know you're not coming, and I'd much rather hear from you!</p>
+       <span class="fee">No-show: 100%</span>
+      </div>
+     </details>
+     <details>
+      <summary>Guests</summary>
+      <div class="body">
+       <p>I love that you want to bring someone along, but my room is small and can't comfortably fit extra chairs. Please check with me before your appointment if you'd like to bring a guest, and I'll let you know if we can make it work.</p>
+      </div>
+     </details>
+     <details>
+      <summary>Screen time</summary>
+      <div class="body">
+       <p>This is your time to unwind! Keeping phone time to a minimum helps your set go quickly and gets you the best result. Moving around can cause delays or mean your nails need to be corrected. I have a TV for you to enjoy, so you'll have something to watch while we work.</p>
+      </div>
+     </details>
+     <details>
+      <summary>Plan accordingly</summary>
+      <div class="body">
+       <p>Great nails take time, and some of my sets can take up to 3 hours. Please choose a day when you can settle in and enjoy it without rushing. My goal is to leave you with my very best work, and I can only do that when we're not in a hurry.</p>
+      </div>
+     </details>
+    </div>
+   </div>
+  </section>
+</div>
+
+<!-- ================= PAGE: SHOP ================= -->
+<div class="page" data-page="shop" hidden>
+<section id="shop">
+ <svg class="star" style="top:110px;left:26px"><use href="#st"/></svg>
+ <div class="wrap">
+  <h2 class="rv">Shop</h2>
+  <div class="cards">
+   <div class="card rv sl">
+    <h3>Cuticle &amp; Co</h3>
+    <!-- EDIT: blurb -->
+    <p>The best cuticle oil! Use the link below or use code "NEY10" for 10% off your order!</p>
+    <a class="go" data-link="cuticlesco">Shop Cuticle &amp; Co</a>
+   </div>
+   <div class="card rv sr">
+    <h3>LTA</h3>
+    <!-- EDIT: blurb -->
+    <p>The best products for nail techs! Use the link below or use code "NEY10" for 10% off your order!</p>
+    <a class="go" data-link="lta">Shop LTA</a>
+   </div>
+  </div>
+  <p class="note rv">These are affiliate links. Ney may earn a small commission at no extra cost to you.</p>
+ </div>
+</section>
+</div>
+
+<!-- ================= PAGE: PRIVACY (opened from the footer link) ================= -->
+<div class="page" data-page="privacy" hidden>
+<section id="privacy">
+ <div class="wrap">
+  <h1>Privacy Policy</h1>
+  <p class="upd">Last Updated: October 2, 2026</p>
+
+  <p>We respect your privacy and are committed to keeping your information private. This Privacy Policy explains how information is handled when you visit and use this website.</p>
+
+  <h3>Information We Collect</h3>
+  <p>This website is a static, informational website designed to provide information about our services, business, and offerings.</p>
+  <p>We do not intentionally collect, request, or store personal information from visitors to this website.</p>
+  <p>We do not require visitors to create an account, submit personal information, or provide information such as their name, email address, phone number, or physical address in order to browse the website.</p>
+
+  <h3>Cookies and Tracking</h3>
+  <p>This website does not intentionally use cookies, tracking pixels, advertising trackers, analytics tools, or similar technologies to track visitors or their activity.</p>
+  <p>We do not sell, rent, or share visitor information with advertisers or data brokers.</p>
+
+  <h3>Third-Party Services</h3>
+  <p>This website may contain links to third-party websites or services. If you choose to visit a third-party website, that website may collect information in accordance with its own privacy policy and practices.</p>
+  <p>We are not responsible for the privacy practices, content, or security of third-party websites.</p>
+
+  <h3>Website Hosting</h3>
+  <p>Although we do not collect or store personal information ourselves, our website may be hosted by a third-party hosting provider. Like most websites, the hosting provider may automatically process limited technical information necessary to operate, secure, and maintain the website, such as IP addresses or basic server information.</p>
+  <p>We do not use this information to identify, profile, or track individual visitors.</p>
+
+  <h3>Children's Privacy</h3>
+  <p>This website is not designed to knowingly collect personal information from children. Because we do not intentionally collect personal information from visitors, we do not knowingly collect personal information from children under the age of 13.</p>
+
+  <h3>Data Security</h3>
+  <p>Because we do not intentionally collect or maintain personal information through this website, we do not maintain databases of visitor personal information.</p>
+  <p>We nevertheless take reasonable steps to maintain the security and integrity of the website.</p>
+
+  <h3>Changes to This Privacy Policy</h3>
+  <p>We may update this Privacy Policy from time to time if our website, services, or privacy practices change. Any updates will be posted on this page with a revised "Last Updated" date.</p>
+
+  <h3>Contact Us</h3>
+  <p>If you have questions about this Privacy Policy or how this website handles information, you may contact us at:</p>
+  <!-- EDIT: business name and email -->
+  <p>Nails by Ney<br><a href="mailto:info@nailsbyney.com">info@nailsbyney.com</a></p>
+
+  <a class="back" href="#home">Back to site</a>
+ </div>
+</section>
+</div>
+
+</main>
+
+<footer id="contact">
+ <div class="rv">
+  <h3>Contact</h3>
+  <p>Send a DM on Instagram or email<br><a class="mail" href="mailto:info@nailsbyney.com">info@nailsbyney.com</a></p>
+  <a class="btn" data-link="booking">Book now</a><br>
+  <a class="pp" href="#privacy">Privacy Policy</a>
+  <p class="copy">&copy; 2026 Nails by Ney</p>
+ </div>
+</footer>
+
+<script>
+/* ===== EDIT YOUR LINKS HERE ===== */
+const CONFIG={
+ booking:"https://booking.mangomint.com/karposcosalon?staffId=30&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeSa8ivTT7SI5TqRzkmb85OxDXilyYh39PChcBAN9qoLlN52j8i8bBhltSLSA_aem_KYiB4U2TMuauLqvtwPP8vA",
+ maps:"https://www.google.com/maps/search/?api=1&query=Karpos+and+Co+Franklin+TN", /* swap in the full street address for a more exact pin */
+ instagram:"https://www.instagram.com/nails_by.ney/",
+ tiktok:"https://www.tiktok.com/@nails_by.ney?_r=1&_t=ZP-9AEhGbg7vKQ",
+ cuticlesco:"https://rstr.co/cuticleandcompany/5610",
+ lta:"https://ltanails.com/?sca_ref=11319377.ukZOn03nDb"
+};
+/* ================================= */
+
+document.querySelectorAll('[data-link]').forEach(a=>{a.href=CONFIG[a.dataset.link];a.target='_blank';a.rel='noopener'});
+
+/* photos: hide placeholder label once a real image loads */
+document.querySelectorAll('.photo img').forEach(img=>{
+ const ok=()=>img.parentElement.classList.add('has'),bad=()=>img.classList.add('broken');
+ if(!img.getAttribute('src'))return;
+ img.addEventListener('load',ok);img.addEventListener('error',bad);
+ if(img.complete&&img.naturalWidth)ok();
+});
+
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv,.mask').forEach((el,i)=>{el.style.transitionDelay=(el.closest('.grid,.strip')?(i%3)*110:0)+'ms';io.observe(el)});
+
+/* scroll motion: progress bar + parallax */
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const speeds=[...document.querySelectorAll('[data-speed]')],photos=[...document.querySelectorAll('.photo')],bar=document.getElementById('bar');
+let tick=false;
+function frame(){
+ tick=false;const y=scrollY,vh=innerHeight;
+ bar.style.width=(y/(document.documentElement.scrollHeight-vh||1)*100)+'%';
+ if(still)return;
+ speeds.forEach(el=>{el.style.transform='translate3d(0,'+(y*el.dataset.speed)+'px,0)'});
+ photos.forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
+  const k=((r.top+r.height/2)-vh/2)/vh;el.style.setProperty('--py',(Math.max(-1,Math.min(1,k))*-7)+'%')});
+}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(frame)}},{passive:true});
+addEventListener('resize',frame);frame();
+
+
+/* pages + tabs */
+const tabs=[...document.querySelectorAll('#tabs a')],pgs=[...document.querySelectorAll('.page')],names=pgs.map(p=>p.dataset.page);
+function pane(n){
+ document.querySelectorAll('.pane').forEach(p=>p.hidden=p.id!=='pane-'+n);
+ document.querySelectorAll('.seg button').forEach(b=>{const on=b.dataset.pane===n;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});
+ frame();
+}
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>pane(b.dataset.pane));
+tabs.forEach(a=>a.addEventListener('click',()=>{if(location.hash==='#'+a.dataset.page||(!location.hash&&a.dataset.page==='home'))scrollTo({top:0,behavior:'smooth'})}));
+function route(){
+ const h=location.hash.slice(1)||'home';
+ const page=({book:'home',work:'gallery',space:'gallery'})[h]||(names.includes(h)?h:'home');
+ pgs.forEach(p=>{const on=p.dataset.page===page;p.hidden=!on;p.classList.remove('enter');if(on){void p.offsetWidth;p.classList.add('enter')}});
+ tabs.forEach(a=>a.classList.toggle('active',a.dataset.page===page));
+ if(h==='work'||h==='space')pane(h);
+ if(h==='book')document.getElementById('book').scrollIntoView({behavior:'smooth'});
+ else scrollTo({top:0,behavior:'instant'});
+ frame();
+}
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
